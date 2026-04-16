@@ -1,0 +1,53 @@
+<!-- src/app/components/hero/hero.component.html -->
+<section id="hero" class="hero">
+  <div class="hero-bg">
+    <div class="grid-overlay"></div>
+  </div>
+
+  <div class="hero-content">
+    <p class="greeting">Hi, I'm</p>
+    <h1 class="name">Amarnadh</h1>
+    <div class="role-line">
+  
+      <span class="role-text">{{ displayText }}<span class="cursor">|</span></span>
+    </div>
+
+    <p class="bio">
+      Software developer at <span class="highlight">TCS</span> specializing in
+      Java Full Stack, with a deep passion for <span class="highlight">AI/ML & NLP</span>.
+      I bridge enterprise Java development with cutting-edge machine learning.
+    </p>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">6+</span>
+        <span class="stat-label">Projects</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">10+</span>
+        <span class="stat-label">Technologies</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">2</span>
+        <span class="stat-label">Domains</span>
+      </div>
+    </div>
+
+    <div class="cta-group">
+      <button class="btn-primary" (click)="scrollTo('projects')">View Projects</button>
+      <button class="btn-secondary" (click)="scrollTo('contact')">Get In Touch</button>
+    </div>
+
+    <div class="socials">
+      <a href="https://github.com/CHALLAAMARNADH" target="_blank" class="social-link">GitHub</a>
+      <a href="https://www.linkedin.com/in/amarnadh-challa-79773026a/" target="_blank" class="social-link">LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="scroll-hint" (click)="scrollTo('about')">
+    <div class="mouse"><div class="wheel"></div></div>
+    <span>scroll</span>
+  </div>
+</section>

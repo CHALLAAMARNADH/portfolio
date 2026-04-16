@@ -1,0 +1,68 @@
+<!-- src/app/components/about/about.component.html -->
+<section id="about" class="about-section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <span class="section-tag">// about me</span>
+        <h2 class="section-title">Who I Am</h2>
+
+        <p>
+          I'm a software developer at <strong>TCS (Tata Consultancy Services)</strong>,
+          working in the Java Full Stack domain. My foundation is in enterprise Java —
+          Spring Boot, Hibernate, Angular — but my real passion lies at the intersection
+          of software engineering and artificial intelligence.
+        </p>
+
+        <p>
+          Over several months, I independently studied <strong>Machine Learning, Deep Learning,
+          and NLP</strong> — from the math behind gradient descent to building CNN classifiers
+          and sentiment analyzers from scratch. I believe the best engineers are the ones
+          who don't wait to be taught.
+        </p>
+
+        <p>
+          I'm working toward roles where I can combine both worlds: solid backend
+          engineering with intelligent, data-driven systems.
+        </p>
+
+        <div class="facts-grid">
+          <div class="fact">
+            <span class="fact-icon">📍</span>
+            <span>India</span>
+          </div>
+          <div class="fact">
+            <span class="fact-icon">🎓</span>
+            <span>B.Tech / B.E.</span>
+          </div>
+          <div class="fact">
+            <span class="fact-icon">🏢</span>
+            <span>TCS</span>
+          </div>
+          <div class="fact">
+            <span class="fact-icon">🎯</span>
+            <span>ML + Java</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="experience-timeline">
+        <h3 class="timeline-title">Experience</h3>
+        <div class="timeline">
+          <div class="timeline-item" *ngFor="let exp of experience">
+            <div class="timeline-dot" [class.current]="exp.current"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h4>{{ exp.role }}</h4>
+                <span class="company">{{ exp.company }}</span>
+                <span class="period">{{ exp.period }}</span>
+              </div>
+              <ul class="timeline-bullets">
+                <li *ngFor="let item of exp.description">{{ item }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

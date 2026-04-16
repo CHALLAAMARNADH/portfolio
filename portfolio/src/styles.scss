@@ -1,0 +1,44 @@
+/* src/styles.scss */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0a0f;
+  color: rgba(255, 255, 255, 0.75);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0a0a0f; }
+::-webkit-scrollbar-thumb {
+  background: #00ffb4;
+  border-radius: 3px;
+}
+
+/* Selection highlight */
+::selection {
+  background: rgba(0, 255, 180, 0.2);
+  color: #fff;
+}
+
+/* Alternate section backgrounds for contrast */
+#about  { background: #0a0a0f; }
+#skills { background: rgba(255,255,255,0.012); }
+#projects { background: #0a0a0f; }
+#contact { background: rgba(255,255,255,0.012); }
+
+a { text-decoration: none; }
+img { max-width: 100%; display: block; }
+button { font-family: inherit; }

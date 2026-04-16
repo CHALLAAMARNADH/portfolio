@@ -1,0 +1,202 @@
+// src/app/components/hero/hero.component.scss
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 2rem 4rem;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 20% 50%, rgba(0,255,180,0.05) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(0,150,255,0.05) 0%, transparent 50%);
+}
+
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,255,180,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,180,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.hero-content {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  animation: fadeUp 0.8s ease both;
+}
+
+.greeting {
+  font-family: 'Courier New', monospace;
+  color: #00ffb4;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  font-family: 'Georgia', serif;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 1rem;
+  letter-spacing: -2px;
+}
+
+.role-line {
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  margin-bottom: 1.5rem;
+  color: rgba(255,255,255,0.6);
+
+  .role-prefix { margin-right: 0.3rem; }
+
+  .role-text {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .cursor {
+    color: #00ffb4;
+    animation: blink 1s step-end infinite;
+    font-weight: 300;
+  }
+}
+
+.bio {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.8;
+  max-width: 540px;
+  margin-bottom: 2rem;
+
+  .highlight {
+    color: #00ffb4;
+    font-weight: 500;
+  }
+}
+
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  .stat-num { font-size: 1.8rem; font-weight: 700; color: #fff; line-height: 1; }
+  .stat-label { font-size: 0.75rem; color: rgba(255,255,255,0.4); letter-spacing: 1px; margin-top: 2px; }
+}
+
+.stat-divider {
+  width: 1px; height: 40px;
+  background: rgba(255,255,255,0.1);
+}
+
+.cta-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.btn-primary {
+  background: #00ffb4;
+  color: #0a0a0f;
+  border: none;
+  padding: 0.75rem 1.8rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  &:hover { background: #00e0a0; transform: translateY(-2px); }
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 0.75rem 1.8rem;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  &:hover { border-color: #00ffb4; color: #00ffb4; transform: translateY(-2px); }
+}
+
+.socials {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-link {
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+  &:hover { color: #00ffb4; }
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: rgba(255,255,255,0.3);
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  animation: bounce 2s infinite;
+}
+
+.mouse {
+  width: 22px; height: 36px;
+  border: 1.5px solid rgba(255,255,255,0.2);
+  border-radius: 11px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.wheel {
+  width: 3px; height: 6px;
+  background: #00ffb4;
+  border-radius: 2px;
+  animation: scroll-wheel 1.8s infinite;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+@keyframes scroll-wheel {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(10px); opacity: 0; }
+}

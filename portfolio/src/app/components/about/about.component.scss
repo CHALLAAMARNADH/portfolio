@@ -1,0 +1,137 @@
+// src/app/components/about/about.component.scss
+.about-section { padding: 6rem 2rem; }
+.container { max-width: 1100px; margin: 0 auto; }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.section-tag {
+  font-family: 'Courier New', monospace;
+  color: #00ffb4; font-size: 0.85rem;
+  letter-spacing: 2px; display: block; margin-bottom: 0.5rem;
+}
+.section-title {
+  font-family: 'Georgia', serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: #fff; font-weight: 700; margin-bottom: 1.5rem;
+}
+
+.about-text p {
+  color: rgba(255,255,255,0.55);
+  font-size: 0.95rem;
+  line-height: 1.85;
+  margin-bottom: 1.1rem;
+
+  strong { color: #fff; font-weight: 600; }
+}
+
+.facts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.fact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.6);
+
+  .fact-icon { font-size: 1rem; }
+}
+
+/* Timeline */
+.timeline-title {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  font-family: 'Courier New', monospace;
+}
+
+.timeline { position: relative; }
+
+.timeline-item {
+  display: flex;
+  gap: 1.2rem;
+  position: relative;
+  padding-bottom: 2rem;
+
+  &:last-child { padding-bottom: 0; }
+  &:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 7px; top: 16px;
+    width: 1px; bottom: 0;
+    background: rgba(255,255,255,0.1);
+  }
+}
+
+.timeline-dot {
+  width: 15px; height: 15px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.15);
+  background: #0a0a0f;
+  flex-shrink: 0;
+  margin-top: 4px;
+
+  &.current {
+    border-color: #00ffb4;
+    background: rgba(0,255,180,0.15);
+    box-shadow: 0 0 10px rgba(0,255,180,0.3);
+  }
+}
+
+.timeline-content { flex: 1; }
+
+.timeline-header {
+  margin-bottom: 0.8rem;
+
+  h4 { color: #fff; font-size: 1rem; font-weight: 600; margin-bottom: 3px; }
+  .company { display: block; color: #00ffb4; font-size: 0.85rem; margin-bottom: 3px; }
+  .period {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.3);
+    font-family: 'Courier New', monospace;
+    background: rgba(255,255,255,0.05);
+    padding: 1px 8px; border-radius: 3px;
+  }
+}
+
+.timeline-bullets {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 6px;
+
+  li {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.6;
+    padding-left: 1rem;
+    position: relative;
+
+    &::before {
+      content: '▸';
+      position: absolute; left: 0;
+      color: #00ffb4; font-size: 0.7rem;
+      top: 3px;
+    }
+  }
+}

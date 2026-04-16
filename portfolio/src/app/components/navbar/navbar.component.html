@@ -1,0 +1,25 @@
+<!-- src/app/components/navbar/navbar.component.html -->
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="nav-inner">
+    <div class="logo" (click)="scrollTo('hero')">
+      <span class="logo-bracket">&lt;</span>
+      <span class="logo-name">Amarnadh</span>
+      <span class="logo-bracket">/&gt;</span>
+    </div>
+
+    <ul class="nav-links" [class.open]="menuOpen">
+      <li *ngFor="let link of navLinks">
+        <a (click)="scrollTo(link.id)" [class.active]="activeSection === link.id">
+          {{ link.label }}
+        </a>
+      </li>
+      <li>
+        <a href="/assets/Amarnadh_Resume.pdf" download class="btn-resume">Resume</a>
+      </li>
+    </ul>
+
+    <button class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>

@@ -1,0 +1,36 @@
+<!-- src/app/components/skills/skills.component.html -->
+<section id="skills" class="skills-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">// skills</span>
+      <h2 class="section-title">What I Work With</h2>
+      <p class="section-desc">Spanning machine learning, Java enterprise, and full-stack web development</p>
+    </div>
+
+    <div class="category-tabs">
+      <button
+        *ngFor="let cat of categories"
+        class="tab-btn"
+        [class.active]="activeCategory === cat.id"
+        (click)="setCategory(cat.id)">
+        {{ cat.label }}
+      </button>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card" *ngFor="let skill of filteredSkills; let i = index"
+           [style.animation-delay]="i * 60 + 'ms'">
+        <div class="skill-top">
+          <span class="skill-name">{{ skill.name }}</span>
+          <span class="skill-pct">{{ skill.level }}%</span>
+        </div>
+        <div class="skill-bar-bg">
+          <div class="skill-bar-fill"
+               [style.width]="animated ? skill.level + '%' : '0%'"
+               [style.background]="getCategoryColor(skill.category)">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
